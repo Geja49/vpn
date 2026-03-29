@@ -10,7 +10,7 @@ function creerResultat(titre, resume, lienRecherche, lienSuppression) {
     resume,
     actions: [
       creerAction("Ouvrir la recherche", lienRecherche),
-      creerAction("Demander la suppression", lienSuppression)
+      creerAction("Supprimer le resultat", lienSuppression)
     ]
   };
 }

@@ -50,7 +50,7 @@ function afficherResultats(donnees) {
     const carte = gabaritModule.content.firstElementChild.cloneNode(true);
     carte.querySelector(".module-categorie").textContent = moduleCourant.categorie;
     carte.querySelector(".module-titre").textContent = moduleCourant.nom;
-    carte.querySelector(".module-resume").textContent = moduleCourant.resume;
+    carte.querySelector(".module-resume").textContent = moduleCourant.description;
     carte.querySelector(".module-niveau").textContent = moduleCourant.niveau;
 
     const liste = carte.querySelector(".module-elements");
@@ -73,15 +73,11 @@ function afficherResultats(donnees) {
 
       entree.actions.forEach((actionCourante, indexAction) => {
         const lien = document.createElement("a");
-        lien.className = "lien-action";
+        lien.className = indexAction === entree.actions.length - 1 ? "lien-action bouton-supprimer" : "lien-action bouton-secondaire";
         lien.href = actionCourante.url;
         lien.target = "_blank";
         lien.rel = "noreferrer noopener";
         lien.textContent = actionCourante.libelle;
-
-        if (indexAction === entree.actions.length - 1) {
-          lien.dataset.suppression = "true";
-        }
 
         groupeActions.appendChild(lien);
       });
