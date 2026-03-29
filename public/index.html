@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Application modulaire pour auditer et reduire son empreinte numerique."
+    />
+    <title>Reducteur d'empreinte numerique</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="conteneur">
+      <section class="hero">
+        <p class="badge">Cybersecurite pratique</p>
+        <h1>Reduire son empreinte numerique de facon simple</h1>
+        <p class="introduction">
+          Cette interface separe l'analyse en modules independants pour
+          identifier les traces visibles et proposer des actions de suppression
+          ou de limitation d'exposition.
+        </p>
+      </section>
+
+      <section class="carte formulaire">
+        <h2>Lancer un audit cible</h2>
+        <form id="formulaire-recherche" novalidate>
+          <label for="requete">Nom, email ou pseudo</label>
+          <div class="ligne-formulaire">
+            <input
+              id="requete"
+              name="requete"
+              type="text"
+              maxlength="120"
+              autocomplete="off"
+              placeholder="exemple@domaine.fr"
+              required
+            />
+            <button type="submit">Analyser</button>
+          </div>
+          <p id="message-erreur" class="message-erreur" hidden></p>
+        </form>
+      </section>
+
+      <section class="grille-modules" id="resultats" aria-live="polite"></section>
+    </main>
+
+    <template id="gabarit-module">
+      <article class="carte module">
+        <div class="entete-module">
+          <div>
+            <p class="module-categorie"></p>
+            <h3 class="module-titre"></h3>
+          </div>
+          <span class="module-niveau"></span>
+        </div>
+        <p class="module-resume"></p>
+        <ul class="module-elements"></ul>
+        <div class="module-actions"></div>
+      </article>
+    </template>
+
+    <script type="module" src="/application.js"></script>
+  </body>
+</html>

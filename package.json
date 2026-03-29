@@ -1,0 +1,14 @@
+{
+  "name": "reducteur-empreinte-numerique",
+  "version": "1.0.0",
+  "description": "Application modulaire pour auditer et reduire son empreinte numerique.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "demarrer": "node src/serveur.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
